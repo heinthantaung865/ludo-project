@@ -1,0 +1,388 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(/ludo-board-game-play-token-background-vector.jpg);
+}
+.container {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.board {
+  width: 600px;
+  height: 600px;
+  cursor: pointer;
+}
+.container1,
+.container3 {
+  width: 100%;
+  height: 40%;
+  display: flex;
+}
+.container2 {
+  width: 100%;
+  height: 20%;
+  display: flex;
+}
+.redPlayer,
+.bluePlayer,
+.greenPlayer,
+.yellowPlayer {
+  width: 40%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.path {
+  width: 20%;
+  height: 100%;
+}
+.left,
+.right {
+  width: 40%;
+  height: 100%;
+}
+.middle {
+  width: 20%;
+  height: 100%;
+  position: relative;
+}
+.green {
+  background-color: #84c21f;
+}
+.red {
+  background-color: #dc2418;
+}
+.blue {
+  background-color: #0092dc;
+}
+.yellow {
+  background-color: #f6c700;
+}
+.white {
+  background-color: #fff;
+}
+.grey {
+  background-color: darkgrey;
+}
+.child {
+  width: 70%;
+  height: 70%;
+}
+.child > div {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.positions {
+  width: 50px;
+  height: 50px;
+  margin: 7.5%;
+  border-radius: 50%;
+  position: relative;
+}
+.tokenRed,
+.tokenGreen,
+.tokenYellow,
+.tokenBlue {
+  width: 47px;
+  height: 67px;
+  position: absolute;
+  bottom: 8px;
+  left: 2px;
+}
+.steps {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.801);
+}
+.tokenPic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tokenPic > * {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.steps > img {
+  transform: translateX(-5px);
+}
+.path > div {
+  width: 33.33%;
+  height: 16.667%;
+  float: left;
+  border: 1px solid black;
+}
+.left > div,
+.right > div {
+  height: 33.33%;
+  width: 16.667%;
+  float: left;
+  border: 1px solid black;
+}
+.star {
+  background-image: url(./star.png);
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-left: 60px solid #dc2418;
+  border-bottom: 60px solid transparent;
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 60px solid #0092dc;
+  position: absolute;
+  bottom: 0;
+}
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-right: 60px solid #f6c700;
+  border-bottom: 60px solid transparent;
+  border-top: 60px solid transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-top: 60px solid #84c21f;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.box1,
+.box2,
+.box3,
+.box4 {
+  position: absolute;
+  width: 150px;
+  height: 80px;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+.box2 {
+  left: auto;
+  right: 0;
+}
+.box3 {
+  bottom: 0;
+}
+.box4 {
+  left: auto;
+  right: 0;
+  bottom: 0;
+}
+.tokenPic {
+  width: 40%;
+  height: 80%;
+  border: 5px solid rgb(246, 179, 11);
+  border-radius: 10px;
+}
+.diceContainer {
+  width: 60%;
+  height: 100%;
+  border: 5px solid rgb(246, 179, 11);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --border-radius: 1vmin;
+  --duration: 2s;
+  --face-size: 50px;
+  --point-size: 1.5vmin; /* Updated point size */
+  --point-position: 0.5vmin; /* Updated point position */
+  --face-length: 25vmin;
+}
+
+/* .diceContainer {
+  width: var(--face-size);
+  aspect-ratio: 1;
+  cursor: pointer;
+} */
+
+.dice {
+  position: relative;
+  width: var(--face-size);
+  aspect-ratio: 1;
+  border-radius: var(--border-radius);
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% calc(var(--face-size) * -0.5);
+  transform: rotateX(180deg) rotateY(180deg);
+  transition: transform var(--duration) ease-in-out;
+}
+
+.face {
+  position: absolute;
+  background: radial-gradient(circle at center, #eee, #ccc);
+  width: var(--face-size);
+  aspect-ratio: 1;
+  border-radius: var(--border-radius);
+  transform: rotateX(0deg) rotateY(180deg);
+  transform-origin: 50% 50% calc(var(--face-size) * -0.5);
+}
+
+.face:nth-child(1) {
+  transform: rotateY(0deg);
+}
+
+.face:nth-child(2) {
+  transform: rotateY(90deg);
+}
+
+.face:nth-child(3) {
+  transform: rotateY(180deg);
+}
+
+.face:nth-child(4) {
+  transform: rotateY(270deg);
+}
+
+.face:nth-child(5) {
+  transform: rotateX(90deg);
+}
+
+.face:nth-child(6) {
+  transform: rotateX(270deg);
+}
+
+.point {
+  position: absolute;
+  width: var(--point-size);
+  aspect-ratio: 1;
+  border-radius: 100%;
+  align-self: center;
+  justify-self: center;
+  background: #444;
+  box-shadow: inset 1px 0 2px #222; /* Updated box shadow */
+}
+
+.point-top {
+  top: var(--point-position);
+}
+
+.point-middle {
+  top: calc((var(--face-size) - var(--point-size)) / 2);
+}
+
+.point-bottom {
+  bottom: var(--point-position);
+}
+
+.point-left {
+  left: var(--point-position);
+}
+
+.point-center {
+  left: calc((var(--face-size) - var(--point-size)) / 2);
+}
+
+.point-right {
+  right: var(--point-position);
+}
+
+.roll-btn {
+  padding: 1vmin 1.5vmin;
+  border: none;
+  border-radius: 1vmin;
+  cursor: pointer;
+  font-weight: bolder;
+}
+.redReady {
+  animation: redready 0.5s ease-in-out infinite;
+}
+
+@keyframes redready {
+  0% {
+    background-color: #dc2418;
+  }
+  50% {
+    background-color: #810e13;
+  }
+  100% {
+    background-color: #dc2418;
+  }
+}
+
+.yellowReady {
+  animation: yellowready 0.5s ease-in-out infinite;
+}
+
+@keyframes yellowready {
+  0% {
+    background-color: #f6c700;
+  }
+  50% {
+    background-color: #a9920e;
+  }
+  100% {
+    background-color: #f6c700;
+  }
+}
+.blueReady {
+  animation: blueready 0.5s ease-in-out infinite;
+}
+
+@keyframes blueready {
+  0% {
+    background-color: #0092dc;
+  }
+  50% {
+    background-color: #006191;
+  }
+  100% {
+    background-color: #0092dc;
+  }
+}
+.greenReady {
+  animation: greenready 0.5s ease-in-out infinite;
+}
+
+@keyframes greenready {
+  0% {
+    background-color: #84c21f;
+  }
+  50% {
+    background-color: #405f0f;
+  }
+  100% {
+    background-color: #84c21f;
+  }
+}

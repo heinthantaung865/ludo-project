@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUDO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1">
+        <div class="tokenPic">
+          <div class="tokenCircleRed" style="background-color: #dc2418"></div>
+        </div>
+        <div class="diceContainer" id="redDiceContainer">
+          <div class="dice">
+            <div class="face" data-id="1">
+              <div class="point point-middle point-center"></div>
+            </div>
+            <div class="face" data-id="2">
+              <div class="point point-top point-right"></div>
+              <div class="point point-bottom point-left"></div>
+            </div>
+            <div class="face" data-id="6">
+              <div class="point point-top point-right"></div>
+              <div class="point point-top point-left"></div>
+              <div class="point point-middle point-right"></div>
+              <div class="point point-middle point-left"></div>
+              <div class="point point-bottom point-right"></div>
+              <div class="point point-bottom point-left"></div>
+            </div>
+            <div class="face" data-id="5">
+              <div class="point point-top point-right"></div>
+              <div class="point point-top point-left"></div>
+              <div class="point point-middle point-center"></div>
+              <div class="point point-bottom point-right"></div>
+              <div class="point point-bottom point-left"></div>
+            </div>
+            <div class="face" data-id="3">
+              <div class="point point-top point-right"></div>
+              <div class="point point-middle point-center"></div>
+              <div class="point point-bottom point-left"></div>
+            </div>
+            <div class="face" data-id="4">
+              <div class="point point-top point-right"></div>
+              <div class="point point-top point-left"></div>
+              <div class="point point-bottom point-right"></div>
+              <div class="point point-bottom point-left"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="diceContainer" id="greenDiceContainer"></div>
+        <div class="tokenPic">
+          <div class="tokenCircleGreen" style="background-color: #84c21f"></div>
+        </div>
+      </div>
+      <div class="box3">
+        <div class="tokenPic">
+          <div class="tokenCircleBlue" style="background-color: #0092dc"></div>
+        </div>
+        <div class="diceContainer" id="blueDiceContainer"></div>
+      </div>
+      <div class="box4">
+        <div class="diceContainer" id="yellowDiceContainer"></div>
+        <div class="tokenPic">
+          <div
+            class="tokenCircleYellow"
+            style="background-color: #f6c700"
+          ></div>
+        </div>
+      </div>
+      <div class="board">
+        <div class="container1">
+          <div class="redPlayer red redReady">
+            <div class="child white">
+              <div>
+                <div class="grey positions" id="redToken1Home">
+                  <img
+                    src="./Tokens/tokenRed.png"
+                    alt=""
+                    class="tokenRed"
+                    id="redToken1"
+                  />
+                </div>
+                <div class="grey positions" id="redToken2Home">
+                  <img
+                    src="./Tokens/tokenRed.png"
+                    alt=""
+                    class="tokenRed"
+                    id="redToken2"
+                  />
+                </div>
+              </div>
+              <div>
+                <div class="grey positions" id="redToken3Home">
+                  <img
+                    src="./Tokens/tokenRed.png"
+                    alt=""
+                    class="tokenRed"
+                    id="redToken3"
+                  />
+                </div>
+                <div class="grey positions" id="redToken4Home">
+                  <img
+                    src="./Tokens/tokenRed.png"
+                    alt=""
+                    class="tokenRed"
+                    id="redToken4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="path">
+            <!-- 1st line -->
+            <div id="step11" class="steps"></div>
+            <div id="step12" class="steps"></div>
+            <div id="step13" class="steps"></div>
+            <!-- 2nd line -->
+            <div id="step10" class="steps"></div>
+            <div class="green steps finishLine" id="greenStep1"></div>
+            <div id="step14" class="green steps"></div>
+            <!-- 3rd line -->
+            <div id="step9" class="star steps"></div>
+            <div class="green steps finishLine" id="greenStep2"></div>
+            <div id="step15" class="steps"></div>
+            <!-- 4th line -->
+            <div id="step8" class="steps"></div>
+            <div class="green steps finishLine" id="greenStep3"></div>
+            <div id="step16" class="steps"></div>
+            <!-- 5th line -->
+            <div id="step7" class="steps"></div>
+            <div class="green steps finishLine" id="greenStep4"></div>
+            <div id="step17" class="steps"></div>
+            <!-- 6th line -->
+            <div id="step6" class="steps"></div>
+            <div class="green steps finishLine" id="greenStep5"></div>
+            <div id="step18" class="steps"></div>
+          </div>
+          <div class="greenPlayer green">
+            <div class="child white">
+              <div>
+                <div class="grey positions" id="greenToken1Home">
+                  <img
+                    src="./Tokens/tokenGreen.png"
+                    alt=""
+                    class="tokenGreen"
+                    id="greenToken1"
+                  />
+                </div>
+                <div class="grey positions" id="greenToken2Home">
+                  <img
+                    src="./Tokens/tokenGreen.png"
+                    alt=""
+                    class="tokenGreen"
+                    id="greenToken2"
+                  />
+                </div>
+              </div>
+              <div>
+                <div class="grey positions" id="greenToken3Home">
+                  <img
+                    src="./Tokens/tokenGreen.png"
+                    alt=""
+                    class="tokenGreen"
+                    id="greenToken3"
+                  />
+                </div>
+                <div class="grey positions" id="greenToken4Home">
+                  <img
+                    src="./Tokens/tokenGreen.png"
+                    alt=""
+                    class="tokenGreen"
+                    id="greenToken4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="left">
+            <!-- 1st line -->
+            <div id="step52" class="steps"></div>
+            <div class="red steps" id="step1"></div>
+            <div id="step2" class="steps"></div>
+            <div id="step3" class="steps"></div>
+            <div id="step4" class="steps"></div>
+            <div id="step5" class="steps"></div>
+            <!-- 2nd line -->
+            <div id="step51" class="steps"></div>
+            <div class="red steps finishLine" id="redStep1"></div>
+            <div class="red steps finishLine" id="redStep2"></div>
+            <div class="red steps finishLine" id="redStep3"></div>
+            <div class="red steps finishLine" id="redStep4"></div>
+            <div class="red steps finishLine" id="redStep5"></div>
+            <!-- 3rd line -->
+            <div id="step50" class="steps"></div>
+            <div id="step49" class="steps"></div>
+            <div id="step48" class="star steps"></div>
+            <div id="step47" class="steps"></div>
+            <div id="step46" class="steps"></div>
+            <div id="step45" class="steps"></div>
+          </div>
+          <div class="middle">
+            <div class="triangles">
+              <div class="triangle-right"></div>
+              <div class="triangle-up"></div>
+              <div class="triangle-left"></div>
+              <div class="triangle-down"></div>
+            </div>
+          </div>
+          <div class="right">
+            <!-- 1st line -->
+            <div id="step19" class="steps"></div>
+            <div id="step20" class="steps"></div>
+            <div id="step21" class="steps"></div>
+            <div id="step22" class="star steps"></div>
+            <div id="step23" class="steps"></div>
+            <div id="step24" class="steps"></div>
+            <!-- 2nd line -->
+            <div class="yellow steps finishLine" id="yellowStep5"></div>
+            <div class="yellow steps finishLine" id="yellowStep4"></div>
+            <div class="yellow steps finishLine" id="yellowStep3"></div>
+            <div class="yellow steps finishLine" id="yellowStep2"></div>
+            <div class="yellow steps finishLine" id="yellowStep1"></div>
+            <div id="step25" class="steps"></div>
+            <!-- 3rd line -->
+            <div id="step31" class="steps"></div>
+            <div id="step30" class="steps"></div>
+            <div id="step29" class="steps"></div>
+            <div id="step28" class="steps"></div>
+            <div id="step27" class="yellow steps"></div>
+            <div id="step26" class="steps"></div>
+          </div>
+        </div>
+        <div class="container3">
+          <div class="bluePlayer blue">
+            <div class="child white">
+              <div>
+                <div class="grey positions" id="blueToken1Home">
+                  <img
+                    src="./Tokens/tokenBlue.png"
+                    alt=""
+                    class="tokenBlue"
+                    id="blueToken1"
+                  />
+                </div>
+                <div class="grey positions" id="blueToken2Home">
+                  <img
+                    src="./Tokens/tokenBlue.png"
+                    alt=""
+                    class="tokenBlue"
+                    id="blueToken2"
+                  />
+                </div>
+              </div>
+              <div>
+                <div class="grey positions" id="blueToken3Home">
+                  <img
+                    src="./Tokens/tokenBlue.png"
+                    alt=""
+                    class="tokenBlue"
+                    id="blueToken3"
+                  />
+                </div>
+                <div class="grey positions" id="blueToken4Home">
+                  <img
+                    src="./Tokens/tokenBlue.png"
+                    alt=""
+                    class="tokenBlue"
+                    id="blueToken4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="path">
+            <!-- 1st line -->
+            <div id="step44" class="steps"></div>
+            <div class="blue steps finishLine" id="blueStep5"></div>
+            <div id="step32" class="steps"></div>
+            <!-- 2nd line -->
+            <div id="step43" class="steps"></div>
+            <div class="blue steps finishLine" id="blueStep4"></div>
+            <div id="step33" class="steps"></div>
+            <!-- 3rd line -->
+            <div id="step42" class="steps"></div>
+            <div class="blue steps finishLine" id="blueStep3"></div>
+            <div id="step34" class="steps"></div>
+            <!-- 4th line -->
+            <div id="step41" class="steps"></div>
+            <div class="blue steps finishLine" id="blueStep2"></div>
+            <div id="step35" class="star steps"></div>
+            <!-- 5th line -->
+            <div id="step40" class="blue steps"></div>
+            <div class="blue steps finishLine" id="blueStep1"></div>
+            <div id="step36" class="steps"></div>
+            <!-- 6th line -->
+            <div id="step39" class="steps"></div>
+            <div id="step38" class="steps"></div>
+            <div id="step37" class="steps"></div>
+          </div>
+          <div class="yellowPlayer yellow">
+            <div class="child white">
+              <div>
+                <div class="grey positions" id="yellowToken1Home">
+                  <img
+                    src="./Tokens/tokenYellow.png"
+                    alt=""
+                    class="tokenYellow"
+                    id="yellowToken1"
+                  />
+                </div>
+                <div class="grey positions" id="yellowToken2Home">
+                  <img
+                    src="./Tokens/tokenYellow.png"
+                    alt=""
+                    class="tokenYellow"
+                    id="yellowToken2"
+                  />
+                </div>
+              </div>
+              <div>
+                <div class="grey positions" id="yellowToken3Home">
+                  <img
+                    src="./Tokens/tokenYellow.png"
+                    alt=""
+                    class="tokenYellow"
+                    id="yellowToken3"
+                  />
+                </div>
+                <div class="grey positions" id="yellowToken4Home">
+                  <img
+                    src="./Tokens/tokenYellow.png"
+                    alt=""
+                    class="tokenYellow"
+                    id="yellowToken4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
